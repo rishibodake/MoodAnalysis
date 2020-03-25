@@ -7,4 +7,12 @@ public class MoodAnaliser {
         else
             return "HAPPY";
     }
+
+    //Function with parameter
+    public String analyseMood(String message)
+    {
+        this.message=message;
+        return analyseMood();
+    }
+
 }
