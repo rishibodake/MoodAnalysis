@@ -14,5 +14,9 @@ public class TestMoodAnaliser {
         String result1=object.analyseMood("I am in Any Mood");
         Assert.assertEquals("HAPPY",result1);
     }
-
+    @Test
+    public void givenNull_WhenResponse_thenHappy() {
+        String result1=object.analyseMood(null);
+        Assert.assertEquals("HAPPY",result1);
+    }
 }

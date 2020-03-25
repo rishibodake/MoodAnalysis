@@ -9,11 +9,17 @@ public class MoodAnaliser {
 
     }
     //Function that return mood
+    //Null pointer exception added
     public String analyseMood () {
-        if (message.contains("Sad"))
-            return "SAD";
-        else
+        try {
+            if (message.contains("Sad"))
+                return "SAD";
+            else
+                return "HAPPY";
+        }catch (NullPointerException e)
+        {
             return "HAPPY";
+        }
     }
 
     //Function with parameter
