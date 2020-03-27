@@ -1,5 +1,7 @@
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 //Default constructor
 
 public class MoodAnalyserFactory {
@@ -21,6 +23,21 @@ public class MoodAnalyserFactory {
         }
         catch (InstantiationException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static Object invokeMethod(Object moodAnalyserObject, String analyseMood) throws MoodAnaliserException{
+        try {
+            Class objectClass = moodAnalyserObject.getClass();
+            Method moodMethod = objectClass.getMethod(analyseMood);
+            Object result = moodMethod.invoke(moodAnalyserObject);
+            return result;
+        }catch (NoSuchMethodException e) {
+            throw new MoodAnaliserException("Method Not Found",MoodAnaliserException.UserDefinedDataType.NO_SUCH_METHOD);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
