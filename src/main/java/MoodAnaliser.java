@@ -7,7 +7,7 @@ public class MoodAnaliser {
         System.out.println("WelCome to mood Analiser");
     }
     //Default Constructor
-    public MoodAnaliser() {
+    public MoodAnaliser(String s) {
 
     }
     //Function that return mood

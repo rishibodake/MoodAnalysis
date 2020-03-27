@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestMoodAnalyser {
-    MoodAnaliser object = new MoodAnaliser();
+    MoodAnaliser object = new MoodAnaliser("");
 
     @Test
     public void message_whenResponse_thenSad() throws MoodAnaliserException {

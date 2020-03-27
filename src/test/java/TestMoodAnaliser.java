@@ -4,7 +4,7 @@ import org.junit.Test;
 import java.lang.reflect.Constructor;
 
 public class TestMoodAnaliser {
-    MoodAnaliser object = new MoodAnaliser();
+    MoodAnaliser object = new MoodAnaliser("");
 
     @Test
     public void message_whenResponse_thenSad() {
@@ -22,8 +22,14 @@ public class TestMoodAnaliser {
         Assert.assertEquals("HAPPY",result1);
     }
     @Test
+    public void GivenEmptyMessage_ShouldReturn_EmptyMoodException()
+    {
+        MoodAnaliser object = new MoodAnaliser("");
+        object.analyseMood();
+    }
+    @Test
     public void givenObject_WhenEquals_ThenTrue() throws MoodAnaliserException {
-        MoodAnaliser object = new MoodAnaliser();
+        MoodAnaliser object = new MoodAnaliser("");
         Constructor constructor = MoodAnalyserFactory.getConstructor("MoodAnalyser");
         MoodAnaliser moodAnalyserObject = MoodAnalyserFactory.createMoodAnalyserObject(constructor);
         boolean result = object.equals(moodAnalyserObject);
