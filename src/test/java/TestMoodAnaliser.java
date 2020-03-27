@@ -27,7 +27,6 @@ public class TestMoodAnaliser {
         MoodAnaliser object = new MoodAnaliser("");
         object.analyseMood();
     }
-    //Test Case 5
     @Test
     public void givenObject_WhenEquals_ThenTrue() throws MoodAnaliserException {
         MoodAnaliser object = new MoodAnaliser("");
@@ -35,6 +34,14 @@ public class TestMoodAnaliser {
         MoodAnaliser moodAnalyserObject = MoodAnalyserFactory.createMoodAnalyserObject(constructor);
         boolean result = object.equals(moodAnalyserObject);
         Assert.assertTrue("true",result);
+    }
+    @Test
+    public void givenClass_WhenWrong_ThenReturnClassNotFound() {
+        try {
+            MoodAnalyserFactory.getConstructor("Moodanalyser");
+        } catch (MoodAnaliserException e) {
+            Assert.assertEquals(MoodAnaliserException.UserDefinedDataType.NO_SUCH_CLASS,e.userDefinedObject);
+        }
     }
 
 }
