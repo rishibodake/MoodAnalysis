@@ -27,6 +27,7 @@ public class TestMoodAnaliser {
         MoodAnaliser object = new MoodAnaliser("");
         object.analyseMood();
     }
+    //Test Case 5
     @Test
     public void givenObject_WhenEquals_ThenTrue() throws MoodAnaliserException {
         MoodAnaliser object = new MoodAnaliser("");
