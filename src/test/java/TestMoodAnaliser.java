@@ -21,5 +21,13 @@ public class TestMoodAnaliser {
         String result1=object.analyseMood(null);
         Assert.assertEquals("HAPPY",result1);
     }
+    @Test
+    public void givenObject_WhenEquals_ThenTrue() throws MoodAnaliserException {
+        MoodAnaliser object = new MoodAnaliser();
+        Constructor constructor = MoodAnalyserFactory.getConstructor("MoodAnalyser");
+        MoodAnaliser moodAnalyserObject = MoodAnalyserFactory.createMoodAnalyserObject(constructor);
+        boolean result = object.equals(moodAnalyserObject);
+        Assert.assertTrue("true",result);
+    }
 
 }
