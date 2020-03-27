@@ -16,4 +16,17 @@ public class MoodAnalyserFactory {
         }
 
     }
+    public static MoodAnaliser createMoodAnalyserObject(Constructor constructor) throws  MoodAnaliserException {
+        try {
+            return (MoodAnaliser) constructor.newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
