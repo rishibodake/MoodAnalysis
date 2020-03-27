@@ -14,4 +14,6 @@ public class MoodAnaliserException extends Exception{
         super(message);
         this.userDefinedObject = userDefinedObject;
     }
+
+
 }

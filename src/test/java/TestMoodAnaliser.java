@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class TestMoodAnaliser {
     MoodAnaliser object = new MoodAnaliser();
 
@@ -19,4 +21,5 @@ public class TestMoodAnaliser {
         String result1=object.analyseMood(null);
         Assert.assertEquals("HAPPY",result1);
     }
+
 }
