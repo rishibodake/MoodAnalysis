@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class MoodAnaliser {
     String message;
 
@@ -28,6 +30,15 @@ public class MoodAnaliser {
         this.message=message;
         return analyseMood();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MoodAnaliser that = (MoodAnaliser) o;
+        return Objects.equals(message, that.message);
+    }
+
 
 
 }
